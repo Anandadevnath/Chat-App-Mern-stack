@@ -1,17 +1,21 @@
 import express from "express"; 
 import dotenv from "dotenv"; 
+import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js"; 
+import messageRoutes from "./routes/message.routes.js"; 
 import connectToMongoDB from "./db/connectToMongodb.js"; 
 
 const app = express();
-const PORT = process.env.PORT || 3000;    
+const PORT = process.env.PORT || 3000;   
 
-dotenv.config(); // to access the env variables
+dotenv.config(); 
 
 app.use(express.json()); // this will allow us to extract the req from authRoutes.controller.js
+app.use(cookieParser()); // this will allow us to extract the req from authRoutes.controller.js
 
 app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.get("/", (req, res) => {
    // root route http://localhost:3000/
@@ -22,5 +26,5 @@ app.get("/", (req, res) => {
 // Adding listener to the server to run the server on a specific port
 app.listen(PORT, () => { 
     connectToMongoDB(); 
-    console.log(`Server is running on port ${PORT}`); 
+    console.log(`Server is running on port ${PORT}`);  
 });   
