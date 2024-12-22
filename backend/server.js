@@ -4,7 +4,9 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js"; 
 import messageRoutes from "./routes/message.routes.js"; 
-import connectToMongoDB from "./db/connectToMongodb.js"; 
+import userRoutes from "./routes/user.routes.js";
+
+import connectToMongoDB from "./db/connectToMongodb.js";  
 
 const app = express();
 const PORT = process.env.PORT || 3000;   
@@ -16,6 +18,7 @@ app.use(cookieParser()); // this will allow us to extract the req from authRoute
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
    // root route http://localhost:3000/
