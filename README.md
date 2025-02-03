@@ -43,7 +43,7 @@ Ensure you have the following installed on your system:
    ```
 4. Start the backend server:
    ```sh
-   npm start server
+   npm start 
    ```
 4. Start the frontend server:
    ```sh
