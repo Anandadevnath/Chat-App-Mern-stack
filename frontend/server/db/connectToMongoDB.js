@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config({ path: '/home/raccoon/Documents/Project/Chat-App-Mern-stack/frontend/server/.env' });
 
 const connectToMongoDB = async () => {
 	try {

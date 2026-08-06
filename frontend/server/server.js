@@ -10,11 +10,13 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
 
 
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+dotenv.config({ path: '/home/raccoon/Documents/Project/Chat-App-Mern-stack/frontend/server/.env' });
+
 const PORT = process.env.PORT || 3000;
 
-const __dirname = path.resolve();
-
-dotenv.config();
 
 app.use(express.json());
 app.use(cookieParser());
@@ -35,7 +37,7 @@ app.get("/", (req, res) => {
 
 
 // Adding listener to the server to run the server on a specific port
-server.listen(PORT, () => {
-    connectToMongoDB();
+server.listen(PORT, async () => {
+    await connectToMongoDB();
     console.log(`Server is running on port ${PORT}`);
 });  
