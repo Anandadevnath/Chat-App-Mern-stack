@@ -1,6 +1,6 @@
 # Chat App MERN
 
-❄ A real-time chat application forged in MERN.
+A real-time chat application forged in MERN.
 
 ## 📑 Contents
 ❄ What is Chat App MERN?
@@ -12,8 +12,8 @@
 ❄ Contributing
 ❄ License
 
-## ❄ What is Chat App MERN?
-Chat App MERN is a real-time, responsive chat application built on the MERN stack (MongoDB, Express.js, React, Node.js). It replaces fragmented communication with a streamlined, real-time messaging experience, powered by Socket.io and secured with JWT.
+## What is Chat App MERN?
+Chat App MERN is a real-time, responsive chat application built on the MERN stack (MongoDB, Express.js, React, Node.js). It replaces fragmented communication with a streamlined, real-time messaging experience, powered by Socket.io, secured with JWT, and featuring a modern UI with Tailwind CSS and DaisyUI.
 
 ## ❄ Quick start
 Prerequisites: Node.js 20.x · npm / pnpm / yarn · MongoDB
